@@ -3,7 +3,7 @@ const Dictionary = require("../models/dictionary");
 
 // GET all words
 // /api/words
-router.get("/api/words", (req, res) => {
+router.get("/api/all", (req, res) => {
 	Dictionary.find({})
 		.select('word')
 		.then(dbDictionary => {
@@ -15,7 +15,7 @@ router.get("/api/words", (req, res) => {
 });
 // GET meaning of one word
 // /api/word/:word
-router.get("/api/word/:word", (req, res) => {
+router.get("/api/:word", (req, res) => {
 	Dictionary.findOne({
 		word: req.params.word
 	})
@@ -30,7 +30,7 @@ router.get("/api/word/:word", (req, res) => {
 
 // GET all words that start with a specific letter
 // /api/words/:letter
-router.get("/api/words/:letter", (req, res) => {
+router.get("/api/all/:letter", (req, res) => {
 	Dictionary.find({
 		word: { $regex: '^' + req.params.letter, $options: 'i' }
 	})
