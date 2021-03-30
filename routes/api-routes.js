@@ -4,6 +4,7 @@ const Dictionary = require("../models/dictionary");
 // GET all words
 // /api/words
 router.get("/api/all", (req, res) => {
+	console.log("HERE TOO");
 	Dictionary.find({})
 		.select('word')
 		.then(dbDictionary => {
