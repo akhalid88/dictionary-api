@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import API from '../../utils/API';
+import { Grid } from '@material-ui/core';
+
+import Word from '../word/word';
 
 function Main() {
 	const [words, setWords] = useState([]);
@@ -19,7 +22,15 @@ function Main() {
 
 	return (
 		<div>
-
+			<Grid container spacing={3}>
+				{words.map(word => (
+					<Grid item xs={3} key={word._id}>
+						<Word
+							key={word._id}
+							word={word.word} />
+					</Grid>
+				))}
+			</Grid>
 		</div>
 	)
 }
