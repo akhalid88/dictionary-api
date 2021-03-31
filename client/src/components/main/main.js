@@ -24,7 +24,7 @@ function Main() {
 		<div>
 			<Grid container spacing={3}>
 				{words.map(word => (
-					<Grid item xs={3} key={word._id}>
+					<Grid item xs={6} sm={3} key={word._id}>
 						<Word
 							key={word._id}
 							word={word.word} />

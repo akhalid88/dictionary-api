@@ -1,8 +1,14 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
+import { Card, CardActionArea, CardContent } from '@material-ui/core';
 function Word(props) {
 	return (
-		<Paper elevation={3}>{props.word}</Paper>
+		<Card elevation={3} raised={true}>
+			<CardActionArea>
+				<CardContent>
+					{props.word}
+				</CardContent>
+			</CardActionArea>
+		</Card>
 	)
 };
 
